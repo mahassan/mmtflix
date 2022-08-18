@@ -1,8 +1,12 @@
 @import url(./scss/_variable.scss);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:wght@100;300&display=swap');
 body{
  background: #000;
+ font-family: 'Montserrat', sans-serif;
+ font-family: 'Roboto', sans-serif;
 }
-.App{
+.App *{
   padding: 0.25rem 0.4rem 0.4rem 0.4rem;
   box-sizing: border-box;
+  color:#fff;
 }
