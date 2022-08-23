@@ -9,3 +9,4 @@ export function getAllMovies(ALLMOVIES_API, setPageNumber,setLength, setMovies){
     }
     fetchPost();
 }
+//TODO - refactor 

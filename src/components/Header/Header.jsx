@@ -2,7 +2,7 @@ import Logo from "../Logo/Logo";
 import "./Header.scss";
 import Search from "../Search/Search";
 const Header = ({ result, pageNumber, setSearchTerm, setPageNumber }) => {
- const basePage = 1;
+  const basePage = 1;
   return (
     <>
       <header>
@@ -19,10 +19,15 @@ const Header = ({ result, pageNumber, setSearchTerm, setPageNumber }) => {
         </span>
 
         <div>
-          Page {basePage} of {pageNumber} 
-          <button disabled={pageNumber === 1}  onClick={() => {
-              setPageNumber((currPage) => currPage -1);
-            }}>&lt;</button>{" "}
+          Page {basePage} of {pageNumber}
+          <button
+            disabled={pageNumber === 1}
+            onClick={() => {
+              setPageNumber((currPage) => currPage - 1);
+            }}
+          >
+            &lt;
+          </button>{" "}
           <button
             onClick={() => {
               setPageNumber((currPage) => currPage + 1);
