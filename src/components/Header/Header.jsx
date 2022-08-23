@@ -18,19 +18,19 @@ const Header = ({ result, pageNumber, setSearchTerm, setPageNumber }) => {
           {(result == null) | undefined ? "" : result + " Results found"}
         </span>
 
-        <p>
+        <div>
           Page {basePage} of {pageNumber} 
           <button disabled={pageNumber === 1}  onClick={() => {
               setPageNumber((currPage) => currPage -1);
-            }}>back</button>{" "}
+            }}>&lt;</button>{" "}
           <button
             onClick={() => {
               setPageNumber((currPage) => currPage + 1);
             }}
           >
-            next
+            &gt;
           </button>
-        </p>
+        </div>
       </div>
     </>
   );
