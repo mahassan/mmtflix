@@ -6,13 +6,13 @@ import Meta from './components/Meta/Meta';
 function App() {
   const [movies, setMovies] = useState([]);
   const [length, setLength] = useState();
-  const [pageNumber, setPageNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(1);
   const [searchTerm, setSearchTerm] = useState('')
   const SEARCH_API = "https://api.themoviedb.org/3/search/movie?api_key=d8c2552f21a3c339b4bc8cd51606624c&query";
-  const ALLMOVIES_API = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=d8c2552f21a3c339b4bc8cd51606624c&page=3'
+  const ALLMOVIES_API = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=d8c2552f21a3c339b4bc8cd51606624c&page=1'
   useEffect(()=>{
       const fetchPost = async() => {
-          const res = await fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=d8c2552f21a3c339b4bc8cd51606624c&page=3');
+          const res = await fetch(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=d8c2552f21a3c339b4bc8cd51606624c&page=${pageNumber}`);
           const data =await res.json();
           setPageNumber(data.page)
           const {results} = data;
@@ -20,7 +20,7 @@ function App() {
           setMovies(results);
       }
       fetchPost();
-  }, [])
+  }, [pageNumber])
   //search
   useEffect(()=>{
     const post = async() => {
@@ -35,7 +35,7 @@ function App() {
 }, [searchTerm])
   return (
     <div className="App">
-      <Header result={length} pageCount={pageNumber} setSearchTerm={setSearchTerm}  />
+      <Header result={length} pageNumber={pageNumber} setSearchTerm={setSearchTerm} setPageNumber={setPageNumber}  />
        <div className="movie">
        {movies.length > 0 && movies.map((data)=>{
         return(

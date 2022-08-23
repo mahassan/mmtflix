@@ -9,9 +9,18 @@ header{
 .pagination{
     background-color: #2C2C2C;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 5.8rem;
     span{
         font-weight: 700;
+    }
+    button{
+        background: #2C2C2C;
+        border:1px solid #fff;
+        cursor: pointer;
+        &:disabled{
+            cursor:not-allowed
+        }
     }
 }

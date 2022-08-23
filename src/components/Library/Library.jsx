@@ -1,4 +1,5 @@
 import "./Library.scss"
+import {Link} from "react-router";
 const IMG_API = "http://image.tmdb.org/t/p/w1280"
 const Library = ({title, poster_path, overview, vote_average, searchTerm}) => {
     return ( 
