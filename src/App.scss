@@ -10,3 +10,14 @@ body{
   box-sizing: border-box;
   color:#fff;
 }
+.movie{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #2C2C2C;
+  justify-content: space-between;
+  padding:0 1.2rem;
+}
+.movie img{
+  width: 16.5rem;
+}
