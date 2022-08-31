@@ -19,7 +19,7 @@ const Header = ({ result, pageNumber, setSearchTerm, setPageNumber }) => {
         </span>
 
         <div>
-          Page {basePage} of {pageNumber}
+          Page {pageNumber} of {basePage}
           <button
             disabled={pageNumber === 1}
             onClick={() => {
